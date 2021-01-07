@@ -14,6 +14,7 @@ class User < ApplicationRecord
 
   # rubocop:disable Lint/Void
   # rubocop:disable Lint/ShadowingOuterLocalVariable
+  
   def friends
     friends_array = friendships.map { |friendship| friendship.friend if friendship.confirmed }
     friends_array + inverse_friendships.map { |friendship| friendship.user if friendship.confirmed }
