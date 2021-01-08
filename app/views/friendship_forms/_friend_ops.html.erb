@@ -1,0 +1,14 @@
+<span>
+  <% if current_user.friend?(user) %>
+    <%= render 'friendship_forms/unfriend_form', user: user, submit_text: 'Unfriend', method: 'delete' %>
+  <% elsif current_user.pending_friends.include?(user) %>
+    <span class="text-warning">Action required</span>
+    <% if current_user.requester?(user) %>
+      <%= render 'friendship_forms/unfriend_form', user: user, submit_text: 'cancel friend request', method: 'delete' %>
+    <% else %>
+      <%= render 'friendship_forms/accept_friend_request', user: user, submit_text: 'Accept friend' %>
+    <% end %>
+  <% else %>
+    <%= render 'friendship_forms/unfriend_form', user: user, submit_text: 'Invite to friendship', method: 'post' %>
+  <% end %>
+</span>
