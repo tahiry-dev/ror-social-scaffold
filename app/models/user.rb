@@ -12,8 +12,9 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
 
-  # rubocop:disable Lint/Void
   # rubocop:disable Lint/ShadowingOuterLocalVariable
+  # rubocop:disable Lint/Void
+
   def friends
     friends_array = friendships.map { |friendship| friendship.friend if friendship.confirmed }
     friends_array + inverse_friendships.map { |friendship| friendship.user if friendship.confirmed }
@@ -39,6 +40,10 @@ class User < ApplicationRecord
   def friend?(user)
     friends.include?(user)
   end
+
+  def requester?(user)
+    id == Friendship.find_friendship(self, user).first.requester_id
+  end
+  # rubocop:enable Lint/ShadowingOuterLocalVariable
+  # rubocop:enable Lint/Void
 end
-# rubocop:enable Lint/Void
-# rubocop:enable Lint/ShadowingOuterLocalVariable
