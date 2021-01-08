@@ -5,11 +5,14 @@ class Friendship < ApplicationRecord
   scope :find_friendship,
         ->(user, friend) { where("(user_id = #{user.id} AND friend_id = #{friend.id})") }
   scope :find_mutual_friendships,
-        ->(user, friend) { where("(user_id = #{user.id} AND friend_id = #{friend.id}) OR (user_id = #{friend.id} AND friend_id = #{user.id})") }
+        # rubocop:disable Layout/LineLength
+        lambda { |user, friend|
+          where("(user_id = #{user.id} AND friend_id = #{friend.id}) OR (user_id = #{friend.id} AND friend_id = #{user.id})")
+        }
+  # rubocop:enable Layout/LineLength
 
   before_create :save_friendship
   after_create :duplicate_friendship
-
 
   private
 
