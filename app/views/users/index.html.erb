@@ -1,5 +1,15 @@
-<section class="users-section">
+
+<section class="users-section my-4 py-4">
   <ul class="users-list">
-    <%= render @users %>
+    <% @users.each do |user| %>
+      <li class="border p-3 my-4">
+        <%= user.name %>
+        <p class="profile-link d-block">
+           <%= link_to 'See Full Profile ',  user_path(user), class: 'profile-link display-3' %>
+        </p>
+          <%= friendship_relation(current_user, user) %>
+      </li>
+      <hr>
+    <% end %>
   </ul>
 </section>

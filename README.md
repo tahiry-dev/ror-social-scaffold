@@ -1,93 +1,85 @@
-# Scaffold for social media app with Ruby on Rails
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+# Social Media Website
+
+> This App allow its user to login and create posts, comment other's posts, like or dislike
+and ask for friendship
+
+![screenshot](./app_screenshot.png)
+
+
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
+- Rails 6
+- Devise
+- Facebook login API
 
 ## Live Demo
 
-TBA
+[Live Demo Link](https://livedemo.com)
 
 
-## Getting Started
+## To get a local copy up and running follow these simple example steps.
+-Step 1
+    Navigate through the local folder where you want to clone the repository and run
+ ```
+    git clone https://github.com/tahiry-dev/ror-social-scaffold.git
+ ```
+-Step 2
 
-To get a local copy up and running follow these simple example steps.
+    Run ``` cd ror-social-scaffold ```
+-Step 3
 
-### Prerequisites
+    Run ``` bundle install ``` to install the gems from the Gemfile.
+-Step 4
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+    Run ``` yarn install ``` to install the npm packages from the package.json file.
+    
+-Step 5
 
-### Setup
+    Run ``` bundle exec figaro install ``` , this will create a file called application.yml in the config folder.
+    
+-Step 6
 
-Instal gems with:
+     Open config/application.yml and add your credenatials for your postgres account like this:
+   
+     ROR_SOCIAL_SCAFFOLD_DATABASE_PASSWORD: "examplePassword"
+   
+     ROR_SOCIAL_SCAFFOLD_DATABASE_USER: "exampleUser"
 
-```
-bundle install
-```
+-Step 7
 
-Setup database with:
+     Run ``` rails db:create``` and ``` rails db:migrate``` to create and migrate the database tables and associations.
+  
+-Step 8
 
-```
-   rails db:create
-   rails db:migrate
-```
-
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
+    Run ``` rails s```  to start the rails server.
 
 
-### Usage
+-Step 9
 
-Start server with:
+    You can visit the app at http://localhost:3000. Enjoy!
 
-```
-    rails server
-```
-
-Open `http://localhost:3000/` in your browser.
-
-### Run tests
-
-```
-    rpsec --format documentation
-```
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
 
 ## Authors
 
-TBA
+👤 **Tahiry RANDRIAMIARINTSOA**
+
+- GitHub: [@tahiry-dev](https://github.com/tahiry-dev)
+- Twitter: [@tahiry](https://twitter.com/Tahiry94825074)
+- LinkedIn: [RANDRIAMIARINTSOA](https://www.linkedin.com/in/tahiry-randriamiarintsoa/)
+
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-TBA
-
 ## 📝 License
 
-TBA
-
+This project is [MIT](lic.url) licensed.
