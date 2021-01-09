@@ -42,19 +42,19 @@ and ask for friendship
     
 -Step 6
 
-   Open config/application.yml and add your credenatials for your postgres account like this:
+     Open config/application.yml and add your credenatials for your postgres account like this:
    
-   ROR_SOCIAL_SCAFFOLD_DATABASE_PASSWORD: "examplePassword"
+     ROR_SOCIAL_SCAFFOLD_DATABASE_PASSWORD: "examplePassword"
    
-   ROR_SOCIAL_SCAFFOLD_DATABASE_USER: "exampleUser"
+     ROR_SOCIAL_SCAFFOLD_DATABASE_USER: "exampleUser"
 
 -Step 7
 
-  Run ``` rails db:create``` and ``` rails db:migrate``` to create and migrate the database tables and associations.
+     Run ``` rails db:create``` and ``` rails db:migrate``` to create and migrate the database tables and associations.
   
 -Step 8
 
-Run ``` rails s```  to start the rails server.
+    Run ``` rails s```  to start the rails server.
 
 
 -Step 9
