@@ -17,7 +17,7 @@ and ask for friendship
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://guarded-ravine-75683.herokuapp.com/)
 
 
 ## To get a local copy up and running follow these simple example steps.
